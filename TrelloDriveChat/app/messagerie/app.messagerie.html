@@ -1,0 +1,31 @@
+<div>
+    <!-- <a href="index.html">Acceuil</a> -->
+    <div>
+        Send:
+        <select [(ngModel)]="sender" [ngModelOptions]="{standalone: true}">
+            <option value="USER1">User 1</option>
+            <option value="USER2">User 2</option>
+            <option value="USER3">User 3</option>
+        </select>
+        <p>Sender: {{sender}}</p>
+        Recieve:
+        <select [(ngModel)]="reciever" [ngModelOptions]="{standalone: true}">
+            <option value="USER1">User 1</option>
+            <option value="USER2">User 2</option>
+            <option value="USER3">User 3</option>
+        </select>
+        <p>Reciever: {{reciever}}</p>
+        <br>
+    </div>
+</div>
+
+<ul id="messages">
+    <li *ngFor="let message of messages">
+        <span [innerHTML]="isSystemMessage(message)"></span>
+    </li>
+</ul>
+<form action="">
+    <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" autocomplete="off" />
+    <p>Message: {{chatBox}}</p>
+    <button (click)="send(sender,reciever)">Send</button>
+</form>

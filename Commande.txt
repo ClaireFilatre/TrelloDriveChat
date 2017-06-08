@@ -1,0 +1,9 @@
+Serveur Go
+Installer go
+puis importer :
+go get github.com/gorilla/websocket
+go get github.com/satori/go.uuid
+Path/src/server > go run main.go
+
+Node localhost
+Path > node ./scripts/web-server.js
