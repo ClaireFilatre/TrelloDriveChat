@@ -2,10 +2,15 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
 import { HttpModule, JsonpModule }  from '@angular/http';
-// import {BeerList} from "./beerlist/beerList.component";
-import { MessagerieComponent } from './messagerie/app.messagerie';
+
 import { SocketService } from './socket.service';
+import {AppComponent} from './app.component';
+import {routing} from './app.routing';
+
+import {Drive} from './Drive/drive.component';
 import {Home} from './Home/home.component';
+import {Messagerie} from './Messagerie/messagerie.component';
+import {Projet} from './Projet/projet.component';
 import {Trello} from './Trello/trello.component';
 
 @NgModule({
@@ -13,17 +18,19 @@ import {Trello} from './Trello/trello.component';
         BrowserModule,
         FormsModule,
         JsonpModule,
-        HttpModule
+        HttpModule,
+        routing        
     ],
     declarations: [
+      AppComponent,
+      Drive,
       Home,
-      MessagerieComponent,
+      Messagerie,
+      Projet,
       Trello
     ],
     bootstrap: [
-      Home,
-      MessagerieComponent,
-      Trello
+      AppComponent
     ],
     providers: [SocketService],
 })
