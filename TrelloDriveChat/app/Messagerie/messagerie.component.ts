@@ -9,6 +9,7 @@ import "rxjs/add/operator/toPromise";
 })
 export class Messagerie implements OnInit, OnDestroy {
     public messages: Array<any>;
+    public users: Array<any>;
     public chatBox: string;
     public sender: string;
     public reciever: string;
@@ -16,6 +17,7 @@ export class Messagerie implements OnInit, OnDestroy {
     public constructor(private socket: SocketService) {
         this.messages = [];
         this.chatBox = "";
+        this.users=["User 1","User 2","User 3","User 4","User 5"]
     }
 
     public ngOnInit() {

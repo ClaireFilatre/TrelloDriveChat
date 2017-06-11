@@ -1,6 +1,5 @@
 <div class="row">
-  <div class="row">
-    <!-- faire la connection vers la page du projet 1-->
+  <!--<div class="row">
     <h1>Nom Projet 1</h1>
     <p class="col-md-offset-1">Collaborateurs</p>
     <p class="col-md-offset-2">- poil de Carotte</p>
@@ -9,11 +8,21 @@
     <p class="col-md-offset-1">Fin prévu le 30/05/2020</p>
   </div>
   <div class="row">
-    <!-- faire la connection vers la page du projet 2-->
     <h1>Nom Projet 2</h1>
     <p class="col-md-offset-5 col-md-2">Collaborateurs</p>
     <p class="col-md-offset-2">- Billy Le Dauphin</p>
     <p class="col-md-offset-1">Commencé le 05/09/2010</p>
     <p class="col-md-offset-1">Fin prévu le 30/05/2018</p>
+  </div>-->
+  <div *ngFor="let project of projectArray">
+    <div>
+      <h1>{{project.name}}</h1>
+      Collaborateur:
+      <li *ngFor="let collabo of project.collaborateur">
+        <p>{{collabo}}</p>
+      </li>
+      Date Debut: <p>{{project.dateDebut}}</p>
+      Date fin: <p>{{project.dateFin}}</p>
+    </div>
   </div>
 </div>

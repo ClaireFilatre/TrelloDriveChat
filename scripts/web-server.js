@@ -78,13 +78,13 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
                     // console.log("register attempt result = " + result);
                     if (result == null){
                         req.method = "GET";
-                        req.url = "/TrelloDriveChat/App/Home/home.html"
+                        req.url = "/TrelloDriveChat/index.html"
                         req.url = HttpServer.prototype.parseUrl_(req.url);
                         StaticServlet.prototype.handleRequest(req, res);
                     }
                     else {
                         req.method = "GET";
-                        req.url = "/TrelloDriveChat/App/Account/authentificationError.html" // Redirection vers email déja existante
+                        req.url = "/TrelloDriveChat/app/Account/authentificationError.html" // Redirection vers email déja existante
                         req.url = HttpServer.prototype.parseUrl_(req.url);
                         StaticServlet.prototype.handleRequest(req, res);
 
@@ -99,7 +99,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
                     // console.log(result.length);
                     if(result.length == 1){
                         req.method = "GET";
-                        req.url = "/TrelloDriveChat/App/Home/home.html"
+                        req.url = "/TrelloDriveChat/index.html"
                         // console.log("IN IT\n\r   path = " + req.method + "\n\r   url = " + req.url);
                         req.url = HttpServer.prototype.parseUrl_(req.url);
                         StaticServlet.prototype.handleRequest(req, res);
