@@ -4,6 +4,8 @@ var util = require('util'),
     http = require('http'),
     fs = require('fs'),
     url = require('url'),
+    users = require("./users"),
+    qs = require('querystring'),
     events = require('events');
 
 var DEFAULT_PORT = 8000;
@@ -51,18 +53,69 @@ HttpServer.prototype.parseUrl_ = function(urlString) {
 };
 
 HttpServer.prototype.handleRequest_ = function(req, res) {
+    // console.log("BEFORE\n\r   path = " + req.method + "\n\r   url = " + req.url);
     var logEntry = req.method + ' ' + req.url;
     if (req.headers['user-agent']) {
         logEntry += ' ' + req.headers['user-agent'];
     }
-    console.log(logEntry);
-    req.url = this.parseUrl_(req.url);
-    var handler = this.handlers[req.method];
-    if (!handler) {
-        res.writeHead(501);
-        res.end();
-    } else {
-        handler.call(this, req, res);
+    util.puts(logEntry);
+    method = req.method;
+    baseUrl = req.url;
+    if (method == "POST") {
+        var body = '';
+
+        req.on('data', function (data) {
+            body += data;
+            if (body.length > 1e6)
+                request.connection.destroy();
+        });
+        req.on('end', function () {
+            var post = qs.parse(body);
+            if (baseUrl == "/userRegister"){ // USER LOGIN
+                users.insertUser(post.username,post.email,post.password, function(result){
+                    // console.log("IN IT\n\r  result : " + result);
+                    if (result == null){
+                        req.method = "GET";
+                        req.url = "/TrelloDriveChat/App/Home/home.html"
+                        req.url = HttpServer.prototype.parseUrl_(req.url);
+                        StaticServlet.prototype.handleRequest(req, res);
+                    }
+                    else {
+                        req.method = "GET";
+                        req.url = "/TrelloDriveChat/App/Account/authentificationError.html" // Redirection vers email déja existante
+                        req.url = HttpServer.prototype.parseUrl_(req.url);
+                        StaticServlet.prototype.handleRequest(req, res);
+
+                    }
+                });
+            }
+            if (baseUrl == "/userLogin"){   // USER REGISTER
+                // console.log("looking for an user");
+                // console.log("email : " + post.email + " psw : " + post.password);
+                // console.log("whereami?");
+                users.findUser(post.email,post.password, function(result) {
+                    // console.log(result.length);
+                    if(result.length == 1){
+                        req.method = "GET";
+                        req.url = "/TrelloDriveChat/App/Home/home.html"
+                        // console.log("IN IT\n\r   path = " + req.method + "\n\r   url = " + req.url);
+                        req.url = HttpServer.prototype.parseUrl_(req.url);
+                        StaticServlet.prototype.handleRequest(req, res);
+                    }
+                });
+            }
+        });
+    }
+    else {
+        // console.log("AFTER\n\r   path = " + req.method + "\n\r   url = " + req.url);
+        req.url = this.parseUrl_(req.url);
+        var handler = this.handlers[req.method];
+        if (!handler) {
+            res.writeHead(501);
+            res.end();
+        } else {
+            handler.call(this, req, res);
+        }
     }
 };
 
