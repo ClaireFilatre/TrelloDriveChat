@@ -25,6 +25,15 @@ export class Trello {
         }
         this.projectArray.push(projet1)
         this.projectArray.push(projet1)
-        console.log("Array -> "+JSON.stringify(this.projectArray));
+    }
+
+    addProject(name:string,collaborateurs:any,dateD:any,dateF:any){
+        let projectObject={
+            name:name,
+            collaborateur:[collaborateurs],
+            dateDebut:dateD,
+            dateFin:dateF
+        }
+        this.projectArray.push(projectObject);
     }
 }

@@ -21,8 +21,21 @@
       <li *ngFor="let collabo of project.collaborateur">
         <p>{{collabo}}</p>
       </li>
-      Date Debut: <p>{{project.dateDebut}}</p>
-      Date fin: <p>{{project.dateFin}}</p>
+      Date Debut:
+      <p>{{project.dateDebut}}</p>
+      Date fin:
+      <p>{{project.dateFin}}</p>
     </div>
   </div>
 </div>
+
+<footer>
+  <form name="addProjectForm">
+    Name:<input [(ngModel)]="name"  [ngModelOptions]="{standalone: true}" required />
+    Collaborateur:<input [(ngModel)]="collabos"  [ngModelOptions]="{standalone: true}" required/>
+    Date Debut:<input [(ngModel)]="dateD"  [ngModelOptions]="{standalone: true}" required/>
+    Date Fin:<input [(ngModel)]="DateF"  [ngModelOptions]="{standalone: true}" required/>
+    
+    <button type="submit" (click)="addProject(name,collabos,dateD,dateF)">addProject</button>
+  </form>
+</footer>
