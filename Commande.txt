@@ -7,3 +7,10 @@ Path/src/server > go run main.go
 
 Node localhost
 Path > node ./scripts/web-server.js
+
+
+
+////// MongoDB//////
+Installer MongoDB (.tar, .msi etc...), voir :
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
