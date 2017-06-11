@@ -5,6 +5,7 @@ var util = require('util'),
     fs = require('fs'),
     url = require('url'),
     users = require("./users"),
+    projects = require("./projects"),
     qs = require('querystring'),
     events = require('events');
 
@@ -74,6 +75,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
             if (baseUrl == "/userRegister"){ // USER LOGIN
                 users.insertUser(post.username,post.email,post.password, function(result){
                     // console.log("IN IT\n\r  result : " + result);
+                    // console.log("register attempt result = " + result);
                     if (result == null){
                         req.method = "GET";
                         req.url = "/TrelloDriveChat/App/Home/home.html"
@@ -102,6 +104,15 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
                         req.url = HttpServer.prototype.parseUrl_(req.url);
                         StaticServlet.prototype.handleRequest(req, res);
                     }
+                });
+            }
+            if (baseUrl == "/getAllUsers"){   // GET ALL USERS
+                // console.log("whereami?");
+                users.findUsers(function(result) {
+                    // console.log(result.length);
+                    // console.log("IN IT\n\r   path = " + req.method + "\n\r   url = " + req.url);
+                    // req.url = HttpServer.prototype.parseUrl_(req.url);
+                    // StaticServlet.prototype.handleRequest(req, res);
                 });
             }
         });
@@ -140,7 +151,9 @@ StaticServlet.MimeMap = {
 
 StaticServlet.prototype.handleRequest = function(req, res) {
     var self = this;
+    console.log("BEFORE\n\r   path = " + req.method + "\n\r   url = " + req.url.pathname);
     var path = ('./' + req.url.pathname).replace('//','/').replace(/%(..)/g, function(match, hex){
+        console.log(path);
         return String.fromCharCode(parseInt(hex, 16));
     });
     var parts = path.split('/');

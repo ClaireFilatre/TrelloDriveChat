@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="en">
+	<head>
+		<script src="sample-registration-form-validation.js"></script>
+	</head>
 	<body>
 		<h3>Log in</h3> 
 		<form  if="loginUser" action="/userLogin" method="POST"> 
-			Email: <input type="text" name="email" value=""><br>
-			Password: <input type="password" name="password" value=""><br><br>
+			Email: <input type="text" name="email" value="" required><br>
+			Password: <input type="password" name="password" value=""required><br><br>
 				
 			<input type="submit" name="submit" value="Submit">
 		</form>	
