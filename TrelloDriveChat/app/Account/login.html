@@ -1,15 +1,37 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj"
+        crossorigin="anonymous">
+				<link rel="stylesheet" href="./loginstyle.css">
 		<script src="sample-registration-form-validation.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU"
+				crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<h3>Log in</h3> 
-		<form  if="loginUser" action="/userLogin" method="POST"> 
-			Email: <input type="text" name="email" value="" required><br>
-			Password: <input type="password" name="password" value=""required><br><br>
-				
-			<input type="submit" name="submit" value="Submit">
-		</form>	
-</body>
+		<header>
+			<div class="row">
+			    <div class="col-md-5">
+			        <h1>TrelloDriveChat</h1>
+			    </div>
+			    <div class="col-md-1">
+			        <a href="../../index.html">Accueil</a>
+			    </div>
+			    <div class="col-md-1">
+			        <a href="../../app/Account/login.html">Login</a>
+			    </div>
+			    <div class="col-md-1">
+			        <a href="../../app/Account/register.html">Register</a>
+			    </div>
+			</div>
+		</header>
+		<div class="login-cadre">
+			<h3>Log in</h3>
+			<form  if="loginUser" action="/userLogin" method="POST">
+				Email: <input type="text" name="email" value="" required><br>
+				Password: <input type="password" name="password" value=""required><br><br>
+				<input type="submit" name="submit" value="Submit">
+			</form>
+		</div>
+	</body>
 </html>

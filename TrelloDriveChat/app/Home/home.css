@@ -26,8 +26,8 @@ h1{
 }
 
 .description-contenant{
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 5px;
   /*align-items: center;*/
 }
