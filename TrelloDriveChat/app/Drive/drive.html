@@ -1,15 +1,17 @@
-﻿<div>
-    <h2>Drive</h2>
-    <p>Ici seront affiché les dossier/fichier du projet (ou un dossier par projet si il n'y a pas de projet selectionner).</p>
+﻿  <div class="col-md-12 description">
+    <h2>Bienvenue sur le Drive</h2>
+    <p>Vous pouvez déposez et consultez des fichiers ici</p>
+  </div>
 
+  <div class="depot">
+    <h4>Déposer un fichier</h4>
     <Input #myInput id="imageUpload" type="file" />
     <button (click)=addFile(myInput)>Add File</button>
-
-    <ul id="file">
+  </div>
+  <ul id="file">
         <li *ngFor="let file of filesArray">
             <!-- Filtrer par projet-->
             Name : <span [innerHTML]="file.name"></span><br> Type : <span [innerHTML]="file.type"></span><br> Last modified
             date : <span [innerHTML]="file.lastModifiedDate "></span><br>
         </li>
-    </ul>
-</div>
+  </ul>

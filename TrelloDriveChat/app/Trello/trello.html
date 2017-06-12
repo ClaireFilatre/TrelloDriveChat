@@ -1,15 +1,17 @@
-<div class="row">
+<div class="description">
+  <h2>Bienvenue sur Trello</h2>
+  <p>Ici vous trouverez l'ensemble de vos projets</p>
+</div>
+<div class="row projets">
   <div *ngFor="let project of projectArray">
     <div>
       <h1>{{project.name}}</h1>
-      Collaborateur:
+      Collaborateurs:
       <li *ngFor="let collabo of project.collaborateur">
         <p>{{collabo}}</p>
       </li>
-      Date Debut:
-      <p>{{project.dateDebut}}</p>
-      Date fin:
-      <p>{{project.dateFin}}</p>
+      Date Debut: <p>{{project.dateDebut}}</p>
+      Date fin:  <p>{{project.dateFin}}</p>
     </div>
   </div>
 </div>

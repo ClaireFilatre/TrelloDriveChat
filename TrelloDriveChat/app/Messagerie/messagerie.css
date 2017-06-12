@@ -1,23 +1,25 @@
 .contenant{
-  background-color: silver;
+  /*background-color: silver;*/
   height:100%;
 }
 
 h2{
   text-decoration: underline;
   text-align: center;
-  padding : 10px;
+  padding : 20px;
+  background-color: #D5D5D5;
 
   /*border:1px, grey, solid;*/
 }
 
 .corpMail{
-  margin-left: auto;
+  /*margin-left: auto;
   margin-right: auto;
   background-color: white;
   border-radius: 10px;
   width:95%;
-  height:500px;
+  height:500px;*/
+  margin-left: 20px;
 }
 
 .fromSector{
