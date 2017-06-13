@@ -12,11 +12,7 @@
         "notes":"Note projet 1"
     },
     {
-<<<<<<< HEAD
         "projectId":"123",
-=======
-        "projectId":"147",
->>>>>>> 8c157a48394a65daa5c1cce3cc6e46b3b1742148
         "name": "Projet 2",
         "collaborateur": [
             "User3"
