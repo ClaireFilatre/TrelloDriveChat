@@ -7,11 +7,8 @@ export class FilterArrayPipe implements PipeTransform {
         if (!args || !args[0]) {
             return items;
         } else if (items) {
-            console.log("Args id -> " + args);
-            return items.filter((item: any) => {
-                console.log("Item id -> " + item.projectId);
-                item.projectId.match(new RegExp(args, 'i'));
-            });
+            console.log("Args value -> " + args);
+            return items.filter((item: any) => item.projectId.match(new RegExp(args, 'i')));
         }
     }
 }

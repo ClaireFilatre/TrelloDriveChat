@@ -19,9 +19,13 @@ export class ProjectService{
 
     getProject(projectId: string): Promise<any[]> {
         return this.getProjects();
-        /*let Projects: any = this.getProjects();
-        console.log("Project detail service -> "+JSON.stringify(Projects));
-        return Projects.filter((project:any) =>project.id.match(new RegExp(projectId,'i')) );*/
+        // let Projects: any;
+        // this.getProjects().then(
+        //         project => Projects = project ,
+        //         error => this.errorMessage = <any>error
+        //     );
+        // console.log("Project detail service -> "+JSON.stringify(Projects));
+        // return Projects.filter((project:any) =>project.projectId.match(new RegExp(projectId,'i')) );
     }
 
     private extractData(res: Response) {

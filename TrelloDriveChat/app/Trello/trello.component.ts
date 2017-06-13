@@ -21,7 +21,7 @@ export class Trello {
 
     addProject(name:string,collaborateurs:any,dateD:any,dateF:any){
         let projectObject={
-            projectId:JSON.stringify(Date.now()),
+            projectId:(String)(Date.now()),
             name:name,
             collaborateur:[collaborateurs],
             dateDebut:dateD,
