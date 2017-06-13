@@ -19,7 +19,7 @@ h1{
 
 .description-element{
   border: 1px silver solid;
-  height: 200px;
+  height: 50%;
   text-align: center;
   margin-left: 2px;
   margin-right: 2px;
@@ -33,6 +33,7 @@ h1{
   margin-right: auto;
   width: 75%;
   margin-top:10px;
+  height: 100%;
   /*margin-bottom: 5px;*/
   /*align-items: center;*/
 }

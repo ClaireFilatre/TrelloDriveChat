@@ -3,7 +3,6 @@
   text-align: center;
   margin-top:0;
   padding-top:10px;
-
   margin-bottom: 10px
 }
 
@@ -13,37 +12,52 @@ h2{
 
 h1{
   color:black;
+  text-align: center;
+  text-decoration: underline;
 }
-.projets{
-  margin-left: 50px;
+
+/*.ensembleProjet{
+  margin-left: auto;
+  margin-right: auto;
+  width:95%;
+}*/
+.ensembleProjet{
+  height:100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.projet{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /*width:80%;*/
+  border:1px silver solid;
 }
 
 footer{
-  margin-left:auto;
-  margin-right: auto;
-  width:95%
-  /*margin-top:10px;
-  margin-bottom: 10px;
-  border:1px grey solid;
-  height:50px;
-  width:98%;
-  background-color: #D5D5D5;
-  display: table-cell;
+  /*position: absolute;
+  bottom: 0;*/
+  background-color: #003366;
+  width:100%;
+  /*height:15px;*/
+  color: white;
+  text-align: center;
   vertical-align: middle;
-  text-align: center;*/
+  }
+
+.column{
+  display: inline-block;
+  width:90%;
 }
 
-.ajoutProjet{
-  /*margin-left:auto;
-  margin-right: auto;
-  width:300px;*/
-  margin-top:10px;
-  margin-bottom: 10px;
-  border:1px grey solid;
-  height:50px;
-
-  background-color: #D5D5D5;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+button{
+  margin: 10px;
+}
+input{
+  width:10%;
+  margin-left: 5px;
+  margin-top:2px;
+  margin-bottom:2px;
 }
