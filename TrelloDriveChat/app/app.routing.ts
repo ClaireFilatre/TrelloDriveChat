@@ -1,12 +1,12 @@
-import {ModuleWithProviders}  from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { ModuleWithProviders }  from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 
-import {Drive} from './Drive/drive.component';
-import {Home} from './Home/home.component';
-import {Messagerie} from './Messagerie/messagerie.component';
-import {Projet} from './Projet/projet.component';
-import {Trello} from './Trello/trello.component';
+import { Drive } from './Drive/drive.component';
+import { Home } from './Home/home.component';
+import { Messagerie } from './Messagerie/messagerie.component';
+import { Projet } from './Projet/projet.component';
+import { Trello } from './Trello/trello.component';
 
 const appRoutes: Routes = [
     {
@@ -27,7 +27,7 @@ const appRoutes: Routes = [
         component: Messagerie
     },
     {
-        path: 'projet',
+        path: 'project/:id',
         component: Projet
     },
     {

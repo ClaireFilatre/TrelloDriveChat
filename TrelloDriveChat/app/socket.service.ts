@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import {Http, Response, JsonpModule} from "@angular/http";
+import "rxjs/add/operator/toPromise";
  
 @Injectable()
 export class SocketService {

@@ -151,7 +151,7 @@ StaticServlet.MimeMap = {
 
 StaticServlet.prototype.handleRequest = function(req, res) {
     var self = this;
-    console.log("BEFORE\n\r   path = " + req.method + "\n\r   url = " + req.url.pathname);
+    //console.log("BEFORE\n\r   path = " + req.method + "\n\r   url = " + req.url.pathname);
     var path = ('./' + req.url.pathname).replace('//','/').replace(/%(..)/g, function(match, hex){
         console.log(path);
         return String.fromCharCode(parseInt(hex, 16));

@@ -19,19 +19,21 @@
     </li>
 </ul>
 
-<form name="sendForm">
-    <div class="row">
-        <div class="col-md-2">
-            Recieve:
-            <select [(ngModel)]="reciever" [ngModelOptions]="{standalone: true}" >
+<footer>
+    <form name="sendForm">
+        <div class="row">
+            <div class="col-md-2">
+                Recieve:
+                <select [(ngModel)]="reciever" [ngModelOptions]="{standalone: true}">
                 <!-- Lister avec la BDD user -->
                 <option *ngFor="let user of users" value={{user}}>{{user}}</option> 
             </select>
+            </div>
+            <div class="col-md-8">
+                Message:<br>
+                <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" autocomplete="off" />
+            </div>
+            <button type="submit" (click)="send(sender,reciever)">Submit</button>
         </div>
-        <div class="col-md-8">
-            Message:<br>
-            <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" autocomplete="off" />
-        </div>
-        <button type="submit" (click)="send(sender,reciever)">Submit</button>
-    </div>
-</form>
+    </form>
+</footer>

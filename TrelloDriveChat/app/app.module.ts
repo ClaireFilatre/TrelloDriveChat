@@ -3,7 +3,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { HttpModule, JsonpModule } from '@angular/http';
 
+import { FilterArrayPipe } from './pipes/filter-array-pipe';
 import { SocketService } from './socket.service';
+import { ProjectService } from './project.service';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
@@ -24,6 +26,7 @@ import { Commun } from './Commun/commun.component';
     routing
   ],
   declarations: [
+    FilterArrayPipe,
     Commun,
     AppComponent,
     Drive,
@@ -36,7 +39,10 @@ import { Commun } from './Commun/commun.component';
     AppComponent,
     Commun
   ],
-  providers: [SocketService],
+  providers: [
+    SocketService,
+    ProjectService
+    ],
 })
 export class AppModule {
 }

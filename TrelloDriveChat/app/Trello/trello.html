@@ -1,22 +1,8 @@
 <div class="row">
-  <!--<div class="row">
-    <h1>Nom Projet 1</h1>
-    <p class="col-md-offset-1">Collaborateurs</p>
-    <p class="col-md-offset-2">- poil de Carotte</p>
-    <p class="col-md-offset-2">- petit tonerre</p>
-    <p class="col-md-offset-1">Commencé le 05/09/1990</p>
-    <p class="col-md-offset-1">Fin prévu le 30/05/2020</p>
-  </div>
-  <div class="row">
-    <h1>Nom Projet 2</h1>
-    <p class="col-md-offset-5 col-md-2">Collaborateurs</p>
-    <p class="col-md-offset-2">- Billy Le Dauphin</p>
-    <p class="col-md-offset-1">Commencé le 05/09/2010</p>
-    <p class="col-md-offset-1">Fin prévu le 30/05/2018</p>
-  </div>-->
   <div *ngFor="let project of projectArray">
     <div>
       <h1>{{project.name}}</h1>
+      <a href="#/project/{{project.projectId}}">Detail</a><br>
       Collaborateur:
       <li *ngFor="let collabo of project.collaborateur">
         <p>{{collabo}}</p>
@@ -31,11 +17,12 @@
 
 <footer>
   <form name="addProjectForm">
-    Name:<input [(ngModel)]="name"  [ngModelOptions]="{standalone: true}" required />
-    Collaborateur:<input [(ngModel)]="collabos"  [ngModelOptions]="{standalone: true}" required/>
-    Date Debut:<input [(ngModel)]="dateD"  [ngModelOptions]="{standalone: true}" required/>
-    Date Fin:<input [(ngModel)]="DateF"  [ngModelOptions]="{standalone: true}" required/>
-    
-    <button type="submit" (click)="addProject(name,collabos,dateD,dateF)">addProject</button>
+    <div class="column">
+      Name:<input [(ngModel)]="name" [ngModelOptions]="{standalone: true}" required /> Collaborateur:
+      <input [(ngModel)]="collabos" [ngModelOptions]="{standalone: true}" required/> Date Debut:<input type="date" [(ngModel)]="dateD"
+        [ngModelOptions]="{standalone: true}" required/> Date Fin:<input type="date" [(ngModel)]="DateF" [ngModelOptions]="{standalone: true}"
+        required/>
+      <button type="submit" (click)="addProject(name,collabos,dateD,dateF)">addProject</button>
+    </div>
   </form>
 </footer>
