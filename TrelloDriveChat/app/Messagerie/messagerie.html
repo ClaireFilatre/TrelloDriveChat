@@ -10,65 +10,33 @@
             <option value="USER3">User 3</option>
             <option value="USER3">User 4</option>
             <option value="USER3">User 5</option>
-<<<<<<< HEAD
-        </select>
-    <p>Sender: {{sender}}</p>
-
-</div>
-
-<ul id="messages">
-    <li *ngFor="let message of messages">
-        <!-- Filtrer par user et ordonner par timestamp-->
-        <span [innerHTML]="isSystemMessage(message)"></span>
-    </li>
-</ul>
-
-<footer>
-    <form name="sendForm">
-        <div class="row">
-            <div class="col-md-2">
-                Recieve:
-                <select [(ngModel)]="reciever" [ngModelOptions]="{standalone: true}">
-                <!-- Lister avec la BDD user -->
-                <option *ngFor="let user of users" value={{user}}>{{user}}</option> 
-            </select>
-            </div>
-            <div class="col-md-8">
-                Message:<br>
-                <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" autocomplete="off" />
-            </div>
-            <button type="submit" (click)="send(sender,reciever)">Submit</button>
-        </div>
-    </form>
-</footer>
-=======
           </select>
           <p>Sender: {{sender}}</p>
       </div>
       <ul id="messages">
         <li *ngFor="let message of messages">
-          <!-- Filtrer par user et ordonner par timestamp-->
-          <span [innerHTML]="isSystemMessage(message)"></span>
-        </li>
-      </ul>
-      <form name="sendForm">
-        <div class="toSector">
-          Recieve:
-          <select [(ngModel)]="reciever" [ngModelOptions]="{standalone: true}" >
-            <!-- Lister avec la BDD user -->
-            <option *ngFor="let user of users" value={{user}}>{{user}}</option>
-          </select>
-        </div>
+        <!-- Filtrer par user et ordonner par timestamp-->
+        <span [innerHTML]="isSystemMessage(message)"></span>
+      </li>
+    </ul>
 
-        <div class="col-md-8">
-          Messages:<br>
-          <div class=" row messageSector">
-          <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" autocomplete="off"/>
-          <button type="submit" (click)="send(sender,reciever)">Submit</button>
-          </div>
-        </div>
+    <form name="sendForm">
+      <div class="toSector">
+        Recieve:
+        <select [(ngModel)]="reciever" [ngModelOptions]="{standalone: true}" >
+          <!-- Lister avec la BDD user -->
+          <option *ngFor="let user of users" value={{user}}>{{user}}</option>
+        </select>
+      </div>
 
-      </form>
+      <div class="col-md-8">
+        Messages:<br>
+        <div class=" row messageSector">
+        <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" autocomplete="off"/>
+        <button type="submit" (click)="send(sender,reciever)">Submit</button>
+        </div>
+      </div>
+
+    </form>
   </div>
 </div>
->>>>>>> b7c5dbcb656ddc5c2fe29c0a3439f8cb59d885b9
