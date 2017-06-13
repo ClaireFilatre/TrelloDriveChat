@@ -13,12 +13,11 @@
           </select>
           <p>Sender: {{sender}}</p>
       </div>
-      <ul id="messages">
+      <!-- <ul id="messages">
         <li *ngFor="let message of messages">
-        <!-- Filtrer par user et ordonner par timestamp-->
         <span [innerHTML]="isSystemMessage(message)"></span>
       </li>
-    </ul>
+    </ul> -->
 
     <form name="sendForm">
       <div class="toSector">
@@ -32,6 +31,12 @@
       <div class="col-md-8">
         Messages:<br>
         <div class=" row messageSector">
+          <ul id="messages">
+            <li *ngFor="let message of messages">
+            <!-- Filtrer par user et ordonner par timestamp-->
+            <span [innerHTML]="isSystemMessage(message)"></span>
+          </li>
+        </ul>
         <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" autocomplete="off"/>
         <button type="submit" (click)="send(sender,reciever)">Submit</button>
         </div>
