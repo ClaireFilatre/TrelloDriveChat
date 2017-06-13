@@ -1,0 +1,25 @@
+[
+    {
+        "projectId": 147,
+        "name": "Projet 1",
+        "collaborateur": [
+            "User1",
+            "User2"
+        ],
+        "dateDebut": "05/09/1990",
+        "dateFin": "05/05/2020",
+        "description": "Projet Test numero 1 description complete",
+        "notes":"Note projet 1"
+    },
+    {
+        "projectId":123,
+        "name": "Projet 2",
+        "collaborateur": [
+            "User3"
+        ],
+        "dateDebut": "05/09/2010",
+        "dateFin": "30/05/2019",
+        "description": "Projet Test numero 2 description complete",
+        "notes":"Note projet 2"
+    }
+]

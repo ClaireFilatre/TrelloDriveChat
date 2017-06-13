@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'drive',
-    templateUrl: './app/Drive/drive.html'
+    templateUrl: './app/Drive/drive.html',
+    styleUrls:['./app/Drive/drive.css']
 })
 
 export class Drive {

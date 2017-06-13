@@ -6,6 +6,7 @@ import "rxjs/add/operator/toPromise";
 @Component({
     selector: 'my-app',
     templateUrl: './app/Messagerie/messagerie.html',
+    styleUrls:['./app/Messagerie/messagerie.css']
 })
 export class Messagerie implements OnInit, OnDestroy {
     public messages: Array<any>;

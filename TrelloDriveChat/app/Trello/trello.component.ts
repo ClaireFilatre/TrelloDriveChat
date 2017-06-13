@@ -4,7 +4,8 @@ import {ProjectService}from '../project.service'
 
 @Component({
     selector: 'trello',
-    templateUrl: './app/Trello/trello.html'
+    templateUrl: './app/Trello/trello.html',
+    styleUrls:['./app/Trello/trello.css']
 })
 
 export class Trello {

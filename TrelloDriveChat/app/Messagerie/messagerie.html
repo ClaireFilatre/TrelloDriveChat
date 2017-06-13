@@ -1,12 +1,16 @@
-<div>
-    Send:
-    <select [(ngModel)]="sender" [ngModelOptions]="{standalone: true}">
-        <!-- Recuperer le user connecte-->
-            <option value="USER1" selected>User 1</option> 
+<div class="contenant">
+  <h2>Bienvenue sur le Chat</h2> <!--après le chat on ajoutera : nom utilisateur-->
+  <div class="corpMail">
+      <div class="fromSector">
+          Send:
+          <select [(ngModel)]="sender" [ngModelOptions]="{standalone: true}">
+            <!-- Recuperer le user connecte-->
+            <option value="USER1" selected>User 1</option>
             <option value="USER2">User 2</option>
             <option value="USER3">User 3</option>
             <option value="USER3">User 4</option>
             <option value="USER3">User 5</option>
+<<<<<<< HEAD
         </select>
     <p>Sender: {{sender}}</p>
 
@@ -37,3 +41,34 @@
         </div>
     </form>
 </footer>
+=======
+          </select>
+          <p>Sender: {{sender}}</p>
+      </div>
+      <ul id="messages">
+        <li *ngFor="let message of messages">
+          <!-- Filtrer par user et ordonner par timestamp-->
+          <span [innerHTML]="isSystemMessage(message)"></span>
+        </li>
+      </ul>
+      <form name="sendForm">
+        <div class="toSector">
+          Recieve:
+          <select [(ngModel)]="reciever" [ngModelOptions]="{standalone: true}" >
+            <!-- Lister avec la BDD user -->
+            <option *ngFor="let user of users" value={{user}}>{{user}}</option>
+          </select>
+        </div>
+
+        <div class="col-md-8">
+          Messages:<br>
+          <div class=" row messageSector">
+          <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" autocomplete="off"/>
+          <button type="submit" (click)="send(sender,reciever)">Submit</button>
+          </div>
+        </div>
+
+      </form>
+  </div>
+</div>
+>>>>>>> b7c5dbcb656ddc5c2fe29c0a3439f8cb59d885b9
