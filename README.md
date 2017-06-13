@@ -33,7 +33,7 @@ Pour une utilisation optimale du Chat, l'installation de Go est nécessaire.
 Une fois l'archive téléchargée et installée, il faut importer websocket et go.uuid.
 
 + go get github.com/gorilla/websocket
-+ go get github.com/gorilla/go.uuid
++ go get github.com/satori/go.uuid
 
 Puis se déplacer à la racine du projet et lancer Go:
 

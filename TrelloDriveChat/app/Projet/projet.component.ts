@@ -5,7 +5,8 @@ import {ProjectService}from '../project.service'
 
 @Component({
     selector: 'projet',
-    templateUrl: './app/Projet/projet.html'
+    templateUrl: './app/Projet/projet.html',
+    styleUrls:['./app/Projet/projet.css']
 })
 
 export class Projet implements OnInit {
@@ -18,21 +19,9 @@ export class Projet implements OnInit {
 
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
-            this.projectId=params['id'];
+            this.projectId=(params['id']);
             this.getProject(params['id']);
         });
-        let projectObject =    {
-            "projectId":0,
-            "name": "Projet 0",
-            "collaborateur": [
-                "User0"
-            ],
-            "dateDebut": "00/00/0000",
-            "dateFin": "00/00/0000",
-            "description": "Projet Test numero 0 description complete",
-            "notes":"Note projet 0"
-        }
-        this.projects.push(projectObject);
     }
 
     getProject(projectId: string) {
