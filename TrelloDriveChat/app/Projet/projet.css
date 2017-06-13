@@ -1,6 +1,51 @@
+.description{
+  background-color: #D5D5D5;
+  text-align: center;
+  margin-top:0;
+  padding-top:10px;
+  margin-bottom: 10px
+}
+
 .global{
     color:black;
 }
 h1 {
     color:black;
+    text-align: center;
+    font-size: 60;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+h4{
+  text-decoration: underline;
+  text-align: center;
+}
+.contenu{
+  border: 2px grey solid;
+  min-height: 200px;
+  /*text-align: center;*/
+  /*margin-left: 2px;
+  margin-right: 2px;*/
+  margin-bottom: 3px;
+  margin-top: 3px;
+  max-width: 30%;
+  /*background-color: white;*/
+}
+.contenant{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top:10px;
+  /*background-color: grey;*/
+  /*height: 100%;*/
+}
+
+.taches{
+  margin-top: 10px;
+  /*margin-left: auto;
+  margin-right: auto;
+  width: 75%;*/
+  text-align: center;
+  border-top: 1px #D5D5D5 solid;
 }
