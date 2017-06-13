@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<div class="row">
-  <div *ngFor="let project of projectArray">
-    <div>
-      <h1>{{project.name}}</h1>
-      <a href="#/project/{{project.projectId}}">Detail</a><br>
-      Collaborateur:
-=======
 <div class="description">
   <h2>Bienvenue sur Trello</h2>
   <p>Ici vous trouverez l'ensemble de vos projets</p>
@@ -15,7 +7,6 @@
     <div>
       <h1>{{project.name}}</h1>
       Collaborateurs:
->>>>>>> b7c5dbcb656ddc5c2fe29c0a3439f8cb59d885b9
       <li *ngFor="let collabo of project.collaborateur">
         <p>{{collabo}}</p>
       </li>
@@ -27,7 +18,6 @@
 
 <footer>
   <form name="addProjectForm">
-<<<<<<< HEAD
     <div class="column">
       Name:<input [(ngModel)]="name" [ngModelOptions]="{standalone: true}" required /> Collaborateur:
       <input [(ngModel)]="collabos" [ngModelOptions]="{standalone: true}" required/> Date Debut:<input type="date" [(ngModel)]="dateD"
@@ -35,13 +25,5 @@
         required/>
       <button type="submit" (click)="addProject(name,collabos,dateD,dateF)">addProject</button>
     </div>
-=======
-    Name:<input [(ngModel)]="name"  [ngModelOptions]="{standalone: true}" required />
-    Collaborateur:<input [(ngModel)]="collabos"  [ngModelOptions]="{standalone: true}" required/>
-    Date Debut:<input [(ngModel)]="dateD"  [ngModelOptions]="{standalone: true}" required/>
-    Date Fin:<input [(ngModel)]="DateF"  [ngModelOptions]="{standalone: true}" required/>
-
-    <button type="submit" (click)="addProject(name,collabos,dateD,dateF)">addProject</button>
->>>>>>> b7c5dbcb656ddc5c2fe29c0a3439f8cb59d885b9
   </form>
 </footer>
